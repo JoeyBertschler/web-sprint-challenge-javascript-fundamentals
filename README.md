@@ -33,11 +33,36 @@ map() - sames as forEach but puts results in new array
 callback is passing a function elsewhere, higher order is a function within a function like the wooden russian doll 
 
 3. What is closure?
-scope, accessing above/reahcing out to parent
+scope, accessing above/reaching out to parent
 
 4. Describe the four rules of the 'this' keyword.
-X
-X
+    1. window binding, if nothing this defaults 
+        (except strict mode, then default = undefined)
+        i.e. if no context this pops up
+    2. implicit binding
+        most common, 80% of use cases
+        when function() invoked, next to the dot
+        only applies to objects with method
+
+const myGhost = {
+    name: 'casper',
+    boo: 'booooo',
+    ghost: function(){dd
+        console.log(this.boo);
+    }
+}
+
+invoke:
+myGhost.ghost(); - invoking ghost function --> boo --> this boo --> refers to my ghost.ghost or simply ghost in my ghost
+
+    3. New binding
+        new is a keyword, makes a new object, this then points to it
+
+    4. explicit binding
+        when using call or apply method .call .apply
+
+jerry.speak.call(newman); --> overrides
+newman.speak.apply(jerry);
 
 5. Why do we need super() in an extended class?
 takes over the stuff from the prior class
